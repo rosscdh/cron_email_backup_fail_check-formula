@@ -1,7 +1,15 @@
-def test_file_exists(host):
-    cron_email_backup_fail_check = host.file('/cron_email_backup_fail_check.yml')
+def test_docker_env_file_exists(host):
+    cron_email_backup_fail_check = host.file('/etc/cron_email_backup_fail_check/.env')
     assert cron_email_backup_fail_check.exists
-    assert cron_email_backup_fail_check.contains('your')
+    assert cron_email_backup_fail_check.contains('IMAP_ADDR')
+    assert cron_email_backup_fail_check.contains('USER_EMAIL')
+    assert cron_email_backup_fail_check.contains('USER_PASS_B64')
+    assert cron_email_backup_fail_check.contains('IMAP_ADDR')
+    assert cron_email_backup_fail_check.contains('IMAP_USER')
+    assert cron_email_backup_fail_check.contains('IMAP_PASS_B64')
+    assert cron_email_backup_fail_check.contains('IMAP_CONN:')
+    assert cron_email_backup_fail_check.contains('ZABBIX_ALERT_EMAIL')
+    assert cron_email_backup_fail_check.contains('SUBJECT_REGEXP')
 
 # def test_cron_email_backup_fail_check_is_installed(host):
 #     cron_email_backup_fail_check = host.package('cron_email_backup_fail_check')

@@ -18,9 +18,12 @@ provisioner:
         - cron_email_backup_fail_check
 
 platforms:
-  - name: centos
-    driver_config:
-      run_command: /usr/lib/systemd/systemd
+- name: debian-with-cron
+  driver_config:
+    image: renskiy/cron:debian
+#   - name: centos
+#     driver_config:
+#       run_command: /usr/lib/systemd/systemd
 
 suites:
   - name: default

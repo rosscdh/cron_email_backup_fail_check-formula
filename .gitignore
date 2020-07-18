@@ -1,8 +1,8 @@
 *.py[cod]
-
+.cache
 # C extensions
 *.so
-
+reports/*
 # Packages
 *.egg
 *.egg-info
