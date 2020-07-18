@@ -1,0 +1,7 @@
+name: cron_email_backup_fail_check
+os: CentOS
+os_family: RedHat
+version: 0.0.1
+release: 1
+description: Formula for script to run once a day check email for backup failuts and send abbix note
+top_level_dir:  cron_email_backup_fail_check
