@@ -7,7 +7,7 @@ def test_docker_env_file_exists(host):
     assert cron_email_backup_fail_check.contains('IMAP_ADDR')
     assert cron_email_backup_fail_check.contains('IMAP_USER')
     assert cron_email_backup_fail_check.contains('IMAP_PASS_B64')
-    assert cron_email_backup_fail_check.contains('IMAP_CONN:')
+    assert cron_email_backup_fail_check.contains('IMAP_CONN')
     assert cron_email_backup_fail_check.contains('ZABBIX_ALERT_EMAIL')
     assert cron_email_backup_fail_check.contains('SUBJECT_REGEXP')
 
