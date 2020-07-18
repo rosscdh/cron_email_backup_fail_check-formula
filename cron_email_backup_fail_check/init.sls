@@ -1,12 +1,15 @@
 {% from "cron_email_backup_fail_check/map.jinja" import config with context %}
-{% from "cron_email_backup_fail_check/map.jinja" import docker_env with context %}
+{% set docker_env = config['docker_env'] %}
 
 {{ config['env_file'] }}:
-  file.serialize:
+  file.managed:
   - makedirs: true
-  - dataset: {{ docker_env }}
+  - contents: |
+      {%- for key, value in docker_env.iteritems() %}
+      {{ key }}={{ value }}
+      {%- endfor %}
 
-docker run --rm -it --env-file {{ config['env_file'] }} {{ config['image'] }}:
+'docker run --rm -it --env-file {{ config["env_file"] }} {{ config["image"] }}':
   cron.present:
     - user: {{ config['user'] }}
     - minute: {{ config['minute'] }}

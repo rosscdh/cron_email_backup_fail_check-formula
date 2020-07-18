@@ -7,56 +7,12 @@ cron_email_backup_fail_check:
   minute: 7
   hour: 2
 
-env_cron_email_backup_fail_check:
-  USER_EMAIL: sendrossemail+cron_email_backup_fail_check@gmail.com
-  USER_PASS_B64: |-
-    -----BEGIN PGP MESSAGE-----
-    hQIMA1xrbIhshmkOAQ//XrbNEST/2F+CGYvapPN8/6DyLVFW8OQ8qtRUCw3dcDwt
-    y/AGOysCB+Dx5L8cXqtYsXn6tCtJBFJHVNCbXQGz0WmIdu1un30KB3q+mIM7L8Z0
-    tepszY/HgrpbIVMuOHXapTbscYyVOQd1A7wA4VZOKqyrCDw6ayI+dGCAxTf7106B
-    O5LZpGoG6NNSXrOiI99RC55Fr15NVzSgHHjjQMgxQnKtePgrPRvGMx4mIxvFi9u4
-    qEZLMUVTm37uVod33yGFgcf8jDsn3lhZf4imvA8np8CgayqBKwGhk2QG27ZZeHBM
-    wHqEXT7rGjIsgc5WsBX+jHeatIiExR1Ubhsnskhh5u26Y1+d79S+tQiZV9p5nS7p
-    1r+s1PmE17+nIq2B9Vl3MJmb8ON5/QOSvNJzmYGqImn/aRknFdYXWN0w81GLrb58
-    Z8h+DVBrYho+NjSD1pgn9KItBfTnKgWngg9GcZbYXw/PmV/ZnNAG+WNU2EAkDInK
-    ID8kXBVhl670dIUBj0Iemb1yWmKkTuwGkhKPtNDeYFalSdaNI/4YW8kSMPn8XSeg
-    r9EH8Cqs3GsNUCJIUW2bgf1VaZWrFKUgGAbL5BMJdQYMHiSO1khKj1L8kT8N3hDA
-    ys+YEUZm87SJr2ZjJGJL199jMHpY4Z54A8I0PcnHrCCV7CZ+h5kIxLv+ib0RDCCF
-    AQwDlj17J7JJ4xEBCACwryAsY9X6yKvPgYeIe9x/rHRulCqf7MPQNzDulWZQhkiu
-    gwsRMO3IH7Mv5txqHECg0KNPxvtPc9VyWyEaDc9yv4dW1No+k1d/pCs3X46TN66E
-    vDzbY4QUywITPiOA6s4dVTosICsJoLHV/sIsMcvQFMLFkDsSxDScbtElLWR1ZBK8
-    wvHu64MYfzdU8xp6ndcsMHS7lR21mjctV/Qi6/lHJq9tmmsulRx0H1Kn5MEdoZr4
-    qhRPHLXzgYfd5vTBcoL9TL2uG2SIpv3HjS94pN/lsrV4mEJB3jdMm63DiSgOxM9V
-    xdjMwQ+8gXvAo5ZwQKOu7Q8tEHwD0vxlGk4ae3IS0kYBBh5Rg2ZooBixrjmxS0LZ
-    +WTkGuSnv2I+aM0z09oPMoJEFgNhNJNKGoMZ4dOiC45vSwiGODXhDj8mHjta8MPO
-    K87tgaar
-    =+0VD
-    -----END PGP MESSAGE-----
-  IMAP_ADDR: null
-  IMAP_USER: null
-  IMAP_PASS_B64: |-
-    -----BEGIN PGP MESSAGE-----
-    hQIMA1xrbIhshmkOAQ//XrbNEST/2F+CGYvapPN8/6DyLVFW8OQ8qtRUCw3dcDwt
-    y/AGOysCB+Dx5L8cXqtYsXn6tCtJBFJHVNCbXQGz0WmIdu1un30KB3q+mIM7L8Z0
-    tepszY/HgrpbIVMuOHXapTbscYyVOQd1A7wA4VZOKqyrCDw6ayI+dGCAxTf7106B
-    O5LZpGoG6NNSXrOiI99RC55Fr15NVzSgHHjjQMgxQnKtePgrPRvGMx4mIxvFi9u4
-    qEZLMUVTm37uVod33yGFgcf8jDsn3lhZf4imvA8np8CgayqBKwGhk2QG27ZZeHBM
-    wHqEXT7rGjIsgc5WsBX+jHeatIiExR1Ubhsnskhh5u26Y1+d79S+tQiZV9p5nS7p
-    1r+s1PmE17+nIq2B9Vl3MJmb8ON5/QOSvNJzmYGqImn/aRknFdYXWN0w81GLrb58
-    Z8h+DVBrYho+NjSD1pgn9KItBfTnKgWngg9GcZbYXw/PmV/ZnNAG+WNU2EAkDInK
-    ID8kXBVhl670dIUBj0Iemb1yWmKkTuwGkhKPtNDeYFalSdaNI/4YW8kSMPn8XSeg
-    r9EH8Cqs3GsNUCJIUW2bgf1VaZWrFKUgGAbL5BMJdQYMHiSO1khKj1L8kT8N3hDA
-    ys+YEUZm87SJr2ZjJGJL199jMHpY4Z54A8I0PcnHrCCV7CZ+h5kIxLv+ib0RDCCF
-    AQwDlj17J7JJ4xEBCACwryAsY9X6yKvPgYeIe9x/rHRulCqf7MPQNzDulWZQhkiu
-    gwsRMO3IH7Mv5txqHECg0KNPxvtPc9VyWyEaDc9yv4dW1No+k1d/pCs3X46TN66E
-    vDzbY4QUywITPiOA6s4dVTosICsJoLHV/sIsMcvQFMLFkDsSxDScbtElLWR1ZBK8
-    wvHu64MYfzdU8xp6ndcsMHS7lR21mjctV/Qi6/lHJq9tmmsulRx0H1Kn5MEdoZr4
-    qhRPHLXzgYfd5vTBcoL9TL2uG2SIpv3HjS94pN/lsrV4mEJB3jdMm63DiSgOxM9V
-    xdjMwQ+8gXvAo5ZwQKOu7Q8tEHwD0vxlGk4ae3IS0kYBBh5Rg2ZooBixrjmxS0LZ
-    +WTkGuSnv2I+aM0z09oPMoJEFgNhNJNKGoMZ4dOiC45vSwiGODXhDj8mHjta8MPO
-    K87tgaar
-    =+0VD
-    -----END PGP MESSAGE-----
-  IMAP_CONN: null
-  ZABBIX_ALERT_EMAIL: null
-  SUBJECT_REGEXP: null
+  docker_env:
+    USER_EMAIL: sendrossemail+cron_email_backup_fail_check@gmail.com
+    USER_PASS_B64: test
+    IMAP_ADDR: null
+    IMAP_USER: null
+    IMAP_PASS_B64: est
+    IMAP_CONN: null
+    ZABBIX_ALERT_EMAIL: null
+    SUBJECT_REGEXP: null

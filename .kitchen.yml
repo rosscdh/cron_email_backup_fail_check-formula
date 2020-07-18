@@ -36,4 +36,4 @@ suites:
 verifier:
   name: shell
   remote_exec: false
-  command: .venv/bin/py.test -v  --connection=docker  --hosts=root@$KITCHEN_CONTAINER_ID --html=reports/$KITCHEN_INSTANCE.html --self-contained-html --junit-xml=reports/junit-$KITCHEN_INSTANCE.xml tests/integration/$KITCHEN_SUITE
+  command: .venv/bin/py.test -s --connection=docker  --hosts=root@$KITCHEN_CONTAINER_ID --html=reports/$KITCHEN_INSTANCE.html --self-contained-html --junit-xml=reports/junit-$KITCHEN_INSTANCE.xml tests/integration/$KITCHEN_SUITE

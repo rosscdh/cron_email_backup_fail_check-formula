@@ -3,10 +3,10 @@
 import email, imaplib, re, sys, json, base64, os
 
 USER_EMAIL = os.getenv("USER_EMAIL")
-USER_PASS_B64 = os.getenv("USER_PASS_B64")
+USER_PASS_B64 = base64.b64decode(os.getenv("USER_PASS_B64"))
 IMAP_ADDR = os.getenv("IMAP_ADDR")
 IMAP_USER = os.getenv("IMAP_USER")
-IMAP_PASS_B64 = os.getenv("IMAP_PASS_B64")
+IMAP_PASS_B64 = base64.b64decode(os.getenv("IMAP_PASS_B64"))
 IMAP_CONN = os.getenv("IMAP_CONN")
 ZABBIX_ALERT_EMAIL = os.getenv("ZABBIX_ALERT_EMAIL")
 SUBJECT_REGEXP = os.getenv("SUBJECT_REGEXP", "Snap:\s*(.+?)\s+failed")
@@ -15,7 +15,7 @@ SUBJECT_REGEXP = os.getenv("SUBJECT_REGEXP", "Snap:\s*(.+?)\s+failed")
 # connect to mailbox,switch to "SNAP" folder and search for emails with "failed"
 # in subject
 user = USER_EMAIL
-pwd = base64.b64decode(USER_PASS_B64)
+pwd = USER_PASS_B64
 conn = imaplib.IMAP4_SSL(IMAP_ADDR)
 conn.login(IMAP_USER, IMAP_PASS_B64)
 conn.select(IMAP_CONN)

@@ -1,3 +1,2 @@
 {% import_yaml 'cron_email_backup_fail_check/config/defaults.yaml' as preconfig %}
 {% set config = salt.pillar.get( 'cron_email_backup_fail_check', default=preconfig.cron_email_backup_fail_check, merge=True ) %}
-{% set docker_env = salt.pillar.get( 'docker_env', default=preconfig.docker_env, merge=True ) %}
