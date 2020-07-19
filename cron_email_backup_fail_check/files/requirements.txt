@@ -1,0 +1,6 @@
+mail-parser
+imap_tools
+py-zabbix
+click
+html2text
+pyyaml
