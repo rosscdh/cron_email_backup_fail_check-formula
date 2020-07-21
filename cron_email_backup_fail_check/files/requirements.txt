@@ -1,3 +1,4 @@
+arrow
 mail-parser
 imap_tools
 py-zabbix

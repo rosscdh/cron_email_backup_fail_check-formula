@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import yaml
 import click
+import arrow
 import datetime
 import html2text
 import mailparser
@@ -22,16 +23,17 @@ ZABBIX_PORT = int(os.getenv("ZABBIX_PORT", "10051"))
 HOSTS = yaml.load(open('hosts.yaml', 'rb'), Loader=yaml.FullLoader).get('hosts')
 HOST_KEYS = HOSTS.keys()
 
-def check_mail(client: str):
-    criteria = imap_tools.A(date=datetime.date.today())
+def check_mail(dateof: arrow.Arrow):
+    print(f"date of : {dateof.datetime.date()}")
+    criteria = imap_tools.A(date=dateof.datetime.date())
     with imap_tools.MailBox(IMAP_ADDR).login(IMAP_USER, IMAP_PASS) as mailbox:
         for msg in mailbox.fetch(criteria=criteria,
                                  mark_seen=False):
             # import pdb;pdb.set_trace()
             # look over to tuple and try match on host_keys
             if any(to for to in msg.to if to in HOST_KEYS):
-                # print(f"subject: {msg.subject}, to:{msg.to}, content: {msg.text or h2t.handle(msg.html)}")
-                print(msg.subject, msg.to)
+                print(f"subject: {msg.subject}, to:{msg.to}, content: {msg.text or h2t.handle(msg.html)}")
+                # print(msg.subject, msg.to)
                 print("***"*15)
     # import pdb;pdb.set_trace()
     # send_to_zabbix(hostname='hostname1', metrics={})
@@ -57,11 +59,19 @@ def send_to_zabbix(hostname: str, metrics: dict):
     return result
 
 @click.command()
-def mail_check():
+@click.option('--date', '-d', default='today', help='Date today|yesterday|yyyy-dd-mm')
+def mail_check(date):
     """
     App to check todays email backup messages and provide zabbix the status data
     """
-    check_mail(client='')
+    if date.lower() == 'today':
+        dateof = arrow.utcnow()
+    elif date.lower() == 'yesterday':
+        dateof = arrow.utcnow().shift(days=-1)
+    else:
+        dateof = arrow.get(date)
+
+    check_mail(dateof=dateof)
 
 
 if __name__ == '__main__':
